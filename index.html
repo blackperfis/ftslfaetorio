@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Foto Aleatória</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos Aleatórias</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <img id="randomImage" src="" alt="Imagem Aleatória">
+
     <script>
-      function getRandomPhoto() {
-        var randomNum = Math.floor(Math.random() * 10) + 1; // Suponha que tenha 10 fotos
-        var photoUrl = "https://blackperfis.github.io/ftslfaetorio/" + randomNum + ".jpg";
-        document.getElementById('photo').src = photoUrl;
-      }
+        // Lista de imagens
+        const images = [
+            'images/1.jpg',
+            'images/2.jpg',
+            'images/3.jpg',
+            'images/4.jpg'
+        ];
+
+        // Seleciona uma imagem aleatoriamente
+        const randomIndex = Math.floor(Math.random() * images.length);
+        const randomImage = images[randomIndex];
+
+        // Atualiza o src da imagem
+        document.getElementById('randomImage').src = randomImage;
     </script>
-  </head>
-  <body onload="getRandomPhoto()">
-    <h1>Foto Aleatória</h1>
-    <img id="photo" src="" alt="Foto Aleatória" />
-  </body>
+</body>
 </html>
