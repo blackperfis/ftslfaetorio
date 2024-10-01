@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foto Aleatória</title>
+    <script>
+      function getRandomPhoto() {
+        var randomNum = Math.floor(Math.random() * 10) + 1; // Suponha que tenha 10 fotos
+        var photoUrl = "https://blackperfis.github.io/ftslfaetorio/" + randomNum + ".jpg";
+        document.getElementById('photo').src = photoUrl;
+      }
+    </script>
+  </head>
+  <body onload="getRandomPhoto()">
+    <h1>Foto Aleatória</h1>
+    <img id="photo" src="" alt="Foto Aleatória" />
+  </body>
+</html>
